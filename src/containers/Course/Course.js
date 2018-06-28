@@ -14,6 +14,18 @@ class Course extends Component {
             }
         }
     }
+    componentWillReceiveProps(nextProps) {
+        if(this.props.location.search != nextProps.location.search) {
+                console.log('not equal props');
+            const query = new URLSearchParams(nextProps.location.search);
+            for (let param of query.entries()) {
+                console.log(param); // yields ['start', '5']
+                if(param[0] == 'tittle') {
+                    this.setState({tittle: param[1]})
+                }
+            }
+        }
+    }
 
     render () {
         return (

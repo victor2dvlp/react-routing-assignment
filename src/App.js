@@ -52,6 +52,7 @@ class App extends Component {
                 <Switch>
                     <Route path="/users" exact component={Users} />
                     <Route path="/courses" component={Courses} />
+                    <Route render={() => <h1>404 not found</h1>}/>
                 </Switch>
             </div>
         </BrowserRouter>
